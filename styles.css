@@ -1,0 +1,213 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables for Easy Customization */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #333;
+    --background-color: #3CAEA3;
+    --text-color: #000000;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+
+.bhome {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    background-image: image("background.jpg");
+    color: var(--text-color);
+    padding: 0 20px;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0 20px;
+    overflow-y: auto;
+    height: 100%;
+    margin: 0;
+}
+
+
+
+/* Header Styling */
+header {
+    background: var(--primary-color);
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navigation Bar Styling */
+nav {
+    margin-top: 5px;
+    background: white;
+    color: black;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 0px;
+}
+
+nav ul li a:hover {
+    background: #444;
+    color: var(--primary-color);
+}
+
+/* Container Styling */
+.container {
+    padding: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    height: 400px;
+
+}
+
+.what {
+    color: white;
+    font-size: 1.3rem;
+    padding: 20px;
+    background: #494747;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 95%;
+    margin: auto;
+}
+
+.important {
+    color: white;
+    font-size: 1.15rem;
+    padding: 20px;
+    background:#494747;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 95%;
+    margin: auto;
+}
+
+.uses {
+    color: white;
+    font-size: 1.15rem;
+    padding: 20px;
+    background:#494747;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 95%;
+    margin: auto;
+}
+
+/* Main Content Styling */
+
+
+main h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+/* Sidebar Styling */
+aside {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+aside h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Footer Styling */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+#heading1 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#pg {
+    padding-bottom: 10px;
+    padding-top: 6px;
+}

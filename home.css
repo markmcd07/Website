@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #333;
+    --background-color: #3CAEA3;
+    --text-color: #000000;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)) ,url(background.jpg);
+    background-size: cover;
+    background-position: center; /* Ensures background is centered on mobile */
+    background-attachment: fixed; /* Prevents background issues on mobile scroll */
+    color: var(--text-color);
+    padding: 0 10px; /* Reduced padding for mobile */
+    min-height: 100vh; /* Ensures full height on mobile */
+}
+
+/* Typing Animation Container */
+.typing-text {
+    font-size: 1rem; /* Smaller font size for mobile */
+    font-weight: bolder;
+    color: #c4afaf;
+}
+.typing-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Typing Animation */
+.typing-container {
+    width: 100%;
+    max-width: 90vw;
+    overflow: hidden;
+    white-space: pre-wrap; /* Changed from nowrap to allow text wrapping */
+    font-size: 1rem; /* Smaller base font size for mobile */
+    text-align: center;
+    border-right: 2px solid #3CAEA3;
+    margin: 0 15px; /* Add some margin on the sides */
+}
+
+/* Modified Typing Animation */
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%; /* Use percentage instead of fixed character width */
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #000000;
+    }
+}
+
+/* Apply animations */
+.typing-container {
+    animation: 
+        typing 5s steps(1000, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .typing-container {
+        font-size: 1.5rem; /* Larger font size for desktop */
+        white-space: nowrap; /* Return to nowrap for desktop */
+        max-width: 80ch; /* Limit width on larger screens */
+    }
+
+    .typing-text {
+        font-size: 1.8rem; /* Smaller font size for mobile */
+        font-weight: bolder;
+        color: #c4afaf;
+    }
+}
+
+
+/* Navigation Bar Styling */
+nav {
+    margin-top: 5px;
+    background: rgba(250, 250, 250, 0);
+    color: black;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    align-items: center;
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 10px 0; /* Vertical spacing between nav items */
+    width: 100%; /* Full width for touch targets */
+    text-align: center;
+}
+
+nav ul li a {
+    color: #c4afaf;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Slightly smaller font for mobile */
+    padding: 12px 15px; /* Larger padding for better touch targets */
+    transition: background 0.8s, color 0.3s;
+    border-radius: 10px;
+    display: block; /* Makes entire area clickable */
+}
+
+nav ul li a:hover {
+    background: #444;
+    color: var(--primary-color);
+}
+
+main h2 {
+    font-family: var(--heading-font);
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Smaller heading for mobile */
+    color: var(--primary-color);
+    text-align: center; /* Center headings on mobile */
+}
+
+/* Sidebar Styling */
+aside {
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin: 10px 0; /* Add vertical spacing */
+}
+
+/* Footer Styling */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+
+    .typing-text {
+        font-size: 3rem;
+    }
+
+    .typing-container {
+        font-size: 1.5rem;
+        width: 80ch;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+        width: auto;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+}
