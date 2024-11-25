@@ -111,9 +111,6 @@ main h2 {
     font-size: 1.8rem;
 }
 
-
-
-
 .container{
     display: inline-flex;
     width: 100%;
@@ -148,4 +145,34 @@ main h2 {
     text-align: center;
     text-decoration: underline;
     margin-bottom: 15px;
+}
+
+/* for mobile versions */
+
+@media (max-width: 768px) {
+    nav ul{
+        flex-direction: row;
+        padding: 10px;
+    }
+    nav ul li a{
+        font-size: 1.1rem;
+    }
+
+    .container{
+        flex-direction: column;
+
+    }
+    .container img {
+        opacity: 100%;
+        width: 100%;
+    }
+
+    .what{
+        flex-direction: row;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
 }

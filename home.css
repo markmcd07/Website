@@ -26,11 +26,12 @@ body {
     color: var(--text-color);
     padding: 0 10px; /* Reduced padding for mobile */
     min-height: 100vh; /* Ensures full height on mobile */
+    overflow-y: hidden;
 }
 
 /* Typing Animation Container */
 .typing-text {
-    font-size: 1rem; /* Smaller font size for mobile */
+    font-size: 1.5rem; /* Smaller font size for mobile */
     font-weight: bolder;
     color: #c4afaf;
 }
@@ -38,8 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    position: relative;
+    height: 90vh;
     width: 100%;
     z-index: -1;
 }
@@ -52,28 +52,10 @@ body {
     white-space: pre-wrap; /* Changed from nowrap to allow text wrapping */
     font-size: 1rem; /* Smaller base font size for mobile */
     text-align: center;
-    border-right: 2px solid #3CAEA3;
     margin: 0 15px; /* Add some margin on the sides */
 }
 
 /* Modified Typing Animation */
-@keyframes typing {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 100%; /* Use percentage instead of fixed character width */
-    }
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    100% {
-        border-color: #000000;
-    }
-}
 
 /* Apply animations */
 .typing-container {
@@ -84,6 +66,28 @@ body {
 
 /* Desktop styles */
 @media (min-width: 768px) {
+
+    @keyframes typing {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%; /* Use percentage instead of fixed character width */
+        }
+    }
+    
+    @keyframes blink-caret {
+        from, to {
+            border-color: transparent;
+        }
+        100% {
+            border-color: #000000;
+        }
+    }
+
+    body { 
+        overflow-y: auto;
+    }
     .typing-container {
         font-size: 1.5rem; /* Larger font size for desktop */
         white-space: nowrap; /* Return to nowrap for desktop */
@@ -111,13 +115,13 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Stack items vertically on mobile */
+    flex-direction: row; 
     align-items: center;
-    padding: 10px;
+    padding: 0px;
 }
 
 nav ul li {
-    margin: 10px 0; /* Vertical spacing between nav items */
+    margin: 5px 0; /* Vertical spacing between nav items */
     width: 100%; /* Full width for touch targets */
     text-align: center;
 }
